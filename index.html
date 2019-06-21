@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>rsync-gui (working title)</title>
+    <link rel="stylesheet" href="css/css.css" />
+  </head>
+  <body>
+    <h1>rsync-gui (working title)</h1>
+    <button id="source-directory">Add source</button>
+    <h2 id="selected-source">Source: </h2>
+    <button id="destination-directory">Add destination</button>
+    <h2 id="selected-dest">Destination: </h2>
+    <div class="options">
+      <input type="checkbox" name="retainTime"><label
+      for="retainTime">Retain Time Data</label>
+      <input type="checkbox" name="retainOwner"><label
+      for="retainOwner">Retain Owner Data</label>
+      <input type="checkbox" name="retainPermissions"><label
+      for="retainPermissions">Retain Permissions Data</label>
+      <input type="checkbox" name="retainGroup"><label
+      for="retainGroup">Retain Group Data</label>
+    </div>
+    <h2>Your script:</h2>
+    <textarea name="" id="" cols="60" rows="5"></textarea></br>
+    <button id="stop">Stop</button>
+    <button id="test">Test</button>
+    <button id="run">Run</button>
+    <script src="js/js.js"></script>
+  </body>
+</html>
