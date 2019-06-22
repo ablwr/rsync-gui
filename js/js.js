@@ -12,15 +12,21 @@ let scriptParts = {
 }
 
 function scriptBuilder(scriptParts) {
-  builtScript = `${scriptParts.rsync} ${scriptParts.source} ${scriptParts.dest}` 
-  console.log(builtScript);
+  builtScript = `${scriptParts.rsync} ${scriptParts.flags} ${scriptParts.source} ${scriptParts.dest}` 
   document.getElementById('showScript').innerHTML = builtScript
 }
 
-const buttons = document.querySelectorAll('button')
+const buttons = document.querySelectorAll('input')
 buttons.forEach(function (b, i){
-  b.addEventListener("click", (e) => {
-    scriptBuilder(scriptParts, "x")
+  b.addEventListener("change", (e) => {
+    if (!scriptParts.flags) { scriptParts.flags += "-" }
+    if (b.checked) {
+      scriptParts.flags += b.id
+    } else {
+      scriptParts.flags = scriptParts.flags.replace(b.id,'')
+    }
+    if (scriptParts.flags == "-") { scriptParts.flags = "" }
+    scriptBuilder(scriptParts)
   })
 })
 
