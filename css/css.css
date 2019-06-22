@@ -1,7 +1,7 @@
 
 body {
   display: grid;
-  background-color: rgba(173, 216, 230, 0.75);
+  background-color: rgba(170, 229, 248, 0.5);
   color: black;
   font-family: 'Lato', sans-serif;
 }
@@ -36,9 +36,25 @@ button {
 }
 
 .decision-bar > button {
-  background-color: transparent;
-  border: 2px solid rgb(66,111,197);
+  background-color: rgba(255,255,255,0.5);
+  border: 4px solid rgb(66,111,197);
   color: rgb(66,111,197);
   font-size: 24px;
+  font-weight: 800;
   padding: 8px 14px 8px 14px;
+}
+
+#stop {
+  color: rgb(197, 81, 66);
+  border-color: rgb(197, 81, 66);
+}
+
+#test {
+  color: rgb(197, 136, 66);
+  border-color: rgb(197, 136, 66);
+}
+
+#run {
+  color: rgb(70, 197, 66);
+  border-color: rgb(70, 197, 66);
 }
