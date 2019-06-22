@@ -1,12 +1,16 @@
 # rsync-gui
 
+For people who want the power of rsync but are not familiar with the command
+line or need a user-friendly way to understand the potential uses.
+
 TODO: 
 - README
-- Add CSS
+- come up with a cute name
+- Add more CSS
 - Make stop/test/go buttons work
-- update textbox with script as modified
 - add tooltips
 - add more options
+- clean up html/selectors to better semantic practice
 
 ## Testing
 
@@ -18,7 +22,7 @@ To clone and run this repository you'll need [Git](https://git-scm.com) and
 # Clone this repository
 git clone https://github.com/ablwr/rsync-gui
 # Go into the repository
-cd electron-quick-start
+cd rsync-gui
 # Install dependencies
 npm install
 # Run the app
