@@ -16,14 +16,17 @@ function scriptBuilder(scriptParts) {
   document.getElementById('showScript').innerHTML = builtScript
 }
 
-const buttons = document.querySelectorAll('input')
+const buttons = document.querySelectorAll('#options button')
 buttons.forEach(function (b, i){
-  b.addEventListener("change", (e) => {
+  b.addEventListener("click", (e) => {
+    console.log("click")
     if (!scriptParts.flags) { scriptParts.flags += "-" }
-    if (b.checked) {
+    if (!b.value) {
       scriptParts.flags += b.id
-    } else {
+      b.value = "checked"
+    } else if (b.value = "checked") {
       scriptParts.flags = scriptParts.flags.replace(b.id,'')
+      b.value = ""
     }
     if (scriptParts.flags == "-") { scriptParts.flags = "" }
     scriptBuilder(scriptParts)
@@ -39,7 +42,7 @@ selectSourceBtn.addEventListener("click", (event) => {
   selectedSource = dialog.showOpenDialog({
     properties: ['openDirectory']
   });
-  document.getElementById('selected-source').innerHTML = `Source: ${selectedSource}`
+  document.getElementById('selected-source').innerHTML = `Selected path: ${selectedSource}`
   scriptParts.source = selectedSource
   scriptBuilder(scriptParts)
 })
@@ -48,7 +51,7 @@ selectDestBtn.addEventListener("click", (event) => {
   selectedDest = dialog.showOpenDialog({
     properties: ['openDirectory']
   })
-  document.getElementById('selected-dest').innerHTML = `Destination: ${selectedDest}`
+  document.getElementById('selected-dest').innerHTML = `Selected path: ${selectedDest}`
   scriptParts.dest = selectedDest
   scriptBuilder(scriptParts)
 })
