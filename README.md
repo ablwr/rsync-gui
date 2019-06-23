@@ -6,7 +6,7 @@ line or need a user-friendly way to understand the potential uses.
 TODO: 
 - README
 - come up with a cute name
-- Make stop/test/go buttons work
+- Move stop/test/go to ready --dry-run and then run
 - add server/remote functionality
 - add tooltips
 - add more options

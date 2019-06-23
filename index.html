@@ -15,18 +15,29 @@
       <button id="destination-directory">Add destination</button>
       <span id="selected-dest"></span>      
     </section>
+    <section id="remote">
+      <!-- TODO -->
+      <!-- <button id="remoteOption">Remote?</button> -->
+    </section>
     <section id="options">
-      <button value="" name="arv" id="a">Archive mode (preserve original file
-      data)</button>
-      <button value="" name="arv" id="r">Work recursively</button>
-      <button value="" name="arv" id="v">Be verbose</button>
-      <button value="" name="quiet" id="u">Do not sync/copy modified files at destination</button>
-      <button value="" name="verbose" id="i">List changed files</button>
-      <button value="" name="checksum" id="c">Skip duplicates based on checksum</button>
+      <button value="" name="a" id="a">Archive mode. Preserve file metadata.</button>
+      <button value="" name="v" id="v">Be verbose</button>
+      <button value="" name="i" id="i">Create change log report</button>
+      <button value="" name="u" id="u">Do not sync/copy modified files at destination</button>
+      <button value="" name="i" id="l">Copy symlinks as symlinks</button>
+      <button value="" name="checksum" id="c">Skip duplicates based on
+      checksum</button>
+      <button value="" name="recurse" id="r">Work recursively</button>
+      <button value="" name="H" id="H">Preserve hardlinks</button>
+      <button value="" name="m" id="m">Remove empty directories</button>
+      <button value="" name="q" id="q">Quiet mode</button>
+      <button value="" name="z" id="z">Compress file data during
+      transfer</button>
+      <button value="" name="u" id="u">Skip new files at destination</button>
     </section>
     <section id="output">
-    <p id="showScript">rsync</p>
-    <button id="copyScript">Copy script</button>
+      <p id="showScript">rsync</p>
+      <button id="copyScript">Copy script</button>
     </section>
     <section id="actions">
       <button id="stop">Stop</button>
