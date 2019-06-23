@@ -16,28 +16,24 @@
       <span id="selected-dest"></span>      
     </section>
     <section id="options">
-      <button value="" name="verbose" id="v">Verbose</button>
-      <button value="" name="quiet" id="q">Quiet</button>
-      <button value="" name="checksum" id="c">Skip
-        based on checksum</button>
-      <button value="" name="keepTime" id="t">Keep Time Data</button>
-      <button value="" name="keepOwner" id="o">Keep Owner Data</button>
-      <button value="" name="keepPermissions" id="p">Keep Permissions Data</button>
-      <button value="" name="keepGroup" id="g">Keep Group Data</button>
-      <button>1</button>
-      <button>2</button>
-      <button>3</button>
+      <button value="" name="arv" id="a">Archive mode (preserve original file
+      data)</button>
+      <button value="" name="arv" id="r">Work recursively</button>
+      <button value="" name="arv" id="v">Be verbose</button>
+      <button value="" name="quiet" id="u">Do not sync/copy modified files at destination</button>
+      <button value="" name="verbose" id="i">List changed files</button>
+      <button value="" name="checksum" id="c">Skip duplicates based on checksum</button>
     </section>
     <section id="output">
     <p id="showScript">rsync</p>
-    <button>Output selection</button>
+    <button id="copyScript">Copy script</button>
     </section>
     <section id="actions">
       <button id="stop">Stop</button>
       <button id="test">Test</button>
       <button id="run">Run</button>
     </section>
-    <footer id="footer"><span>Footer</span></footer>
+    <footer id="footer"><span>Work in progress by Ashley Blewer</span></footer>
     <script src="js/js.js"></script>
   </body>
 </html>

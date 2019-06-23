@@ -6,11 +6,13 @@ line or need a user-friendly way to understand the potential uses.
 TODO: 
 - README
 - come up with a cute name
-- Add more CSS
 - Make stop/test/go buttons work
+- add server/remote functionality
 - add tooltips
 - add more options
+- think about giving options vs clutter
 - clean up html/selectors to better semantic practice
+- improve design
 
 ## Testing
 

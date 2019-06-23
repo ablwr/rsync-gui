@@ -1,4 +1,3 @@
-
 body {
   background-color: #2d7dd2;
   color: black;
@@ -13,7 +12,7 @@ body {
 #layout {
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows:repeat(6, 0.25fr) 0.1;
+  grid-template-rows:repeat(5, 0.25fr) 0.1;
   grid-gap: 12px;
 }
 
@@ -23,10 +22,6 @@ body {
 
 #title, #directories, #output, #actions, #footer {
   align-self: stretch;
-}
-
-#footer {
-  text-align: center;
 }
 
 /* Subgrid Layouts */
@@ -40,7 +35,7 @@ body {
 
 #options {
   display: inline-grid;
-  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 8px;
 }
 
@@ -57,9 +52,11 @@ body {
 }
 
 /* Styling  */
+
 #title > h1 {
-  font-size: 3em;
+  font-size: 2.75em;
   font-weight: 800;
+  color: white;
   text-transform: uppercase;
   text-align: center;
   padding: 0px;
@@ -106,14 +103,15 @@ h2 {
 }
 
 #options button {
-  width: 8em;
-  height: 8em;
-  background-color: #EFEFEF;
+  width: auto;
+  height: auto;
+  background-color: #d9a902;
   border: 0px solid transparent;
   overflow: visible;
   text-align: center;
-  font-size: 18px;
-  padding: 18px;
+  font-size: 16px;
+  font-weight: 800;
+  padding: 10px;
 }
 
 #options > button:hover {
@@ -138,5 +136,10 @@ h2 {
 
 #actions > #run {
   color: black;
-  background-color: #97cc04;
+  background-color: #a0d01a;
+}
+
+#footer {
+  text-align: center;
+  color: white;
 }
