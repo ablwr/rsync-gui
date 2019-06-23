@@ -5,44 +5,39 @@
     <title>rsync-gui (working title)</title>
     <link rel="stylesheet" href="css/css.css" />
   </head>
-  <body>
-    
-    <div id="layout">
+  <body id="layout">
+    <header id="title">
       <h1>rsync-gui</h1>
-      
-      <p>
-        <button id="source-directory">Add source</button>
-        <span id="selected-source"></span>
-      </p>
-      
-      <p>
-        <button id="destination-directory">Add destination</button>
-        <span id="selected-dest"></span>
-      </p>
-
-      <div class="options">
-        <input type="checkbox" name="verbose" id="v"><label for="verbose">Verbose</label>
-        <input type="checkbox" name="quiet" id="q"><label for="quiet">Quiet</label>
-        <input type="checkbox" name="checksum" id="c"><label for="checksum">Skip
-        based on checksum</label>
-        <input type="checkbox" name="keepTime" id="t"><label
-        for="keepTime">Keep Time Data</label>
-        <input type="checkbox" name="keepOwner" id="o"><label
-        for="keepOwner">Keep Owner Data</label>
-        <input type="checkbox" name="keepPermissions" id="p"><label
-        for="keepPermissions">Keep Permissions Data</label>
-        <input type="checkbox" name="keepGroup" id="g"><label
-        for="keepGroup">Keep Group Data</label>
-      </div>
-    
-      <h2>Your script:</h2>
-      <textarea name="" id="showScript" cols="60" rows="5"></textarea></br>
-      <div class="decision-bar">
-        <button id="stop">Stop</button>
-        <button id="test">Test</button>
-        <button id="run">Run</button>
-      </div>
-    </div>
+    </header>
+    <section id="directories">
+      <button id="source-directory">Add source</button>
+      <span id="selected-source"></span>
+      <button id="destination-directory">Add destination</button>
+      <span id="selected-dest"></span>      
+    </section>
+    <section id="options">
+      <div class="box"><input type="checkbox" name="verbose" id="v"><label for="verbose">Verbose</label></div>
+      <div class="box"><input type="checkbox" name="quiet" id="q"><label for="quiet">Quiet</label></div>
+      <div class="box"><input type="checkbox" name="checksum" id="c"><label for="checksum">Skip
+        based on checksum</label></div>
+      <div class="box"><input type="checkbox" name="keepTime" id="t"><label for="keepTime">Keep Time Data</label></div>
+      <div class="box"><input type="checkbox" name="keepOwner" id="o"><label for="keepOwner">Keep Owner Data</label></div>
+      <div class="box"><input type="checkbox" name="keepPermissions" id="p"><label for="keepPermissions">Keep Permissions Data</label></div>
+      <div class="box"><input type="checkbox" name="keepGroup" id="g"><label for="keepGroup">Keep Group Data</label></div>
+      <div class="box">1</div>
+      <div class="box">2</div>
+      <div class="box">3</div>
+    </section>
+    <section id="output">
+    <h2>Output:</h2>
+    <p name="" id="showScript">rsync</p>
+    </section>
+    <section id="actions">
+      <button id="stop">Stop</button>
+      <button id="test">Test</button>
+      <button id="run">Run</button>
+    </section>
+    <footer id="footer"><span>Footer</span></footer>
     <script src="js/js.js"></script>
   </body>
 </html>

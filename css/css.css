@@ -1,17 +1,54 @@
 
 body {
-  display: grid;
-  background-color: rgba(170, 229, 248, 0.5);
+  background-color: #2d7dd2;
   color: black;
   font-family: 'Lato', sans-serif;
+  padding: 0px;
+  margin: 0px;
 }
+
+/* Grid Layout */
 
 #layout {
-  grid-template-columns: repeat(5, 1fr);
-  grid-gap: 0.25rem;
-  max-width: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows:repeat(7, 0.25fr);
+  grid-gap: 18px;
 }
 
+#title, #directories, #output, #actions, #footer {
+  align-self: stretch;
+}
+
+#footer {
+  text-align: center;
+}
+
+/* Subgrid Layouts */
+
+#directories {
+  display: inline-grid;
+  grid-template-rows: 0.25fr 0.25fr;
+  grid-template-columns: 0.1fr auto;
+}
+
+#options {
+  display: inline-grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+}
+
+#output {
+  display: inline-grid;
+  grid-template-columns: 0.01fr auto;
+}
+
+#actions {
+  display: inline-grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  height: 6em;
+}
+
+/* Styling  */
 h1 {
   font-size: 8vh;
   font-weight: 800;
@@ -23,38 +60,66 @@ h2 {
   font-size: 3vh;
 }
 
-button {
-  background-color: transparent;
-  border: 2px solid rgb(66,111,197);
-  color: rgb(66,111,197);
-  font-size: 16px;
-  padding: 8px 14px 8px 14px;
-}
-
-.decision-bar {
-  text-align: center;
-}
-
-.decision-bar > button {
-  background-color: rgba(255,255,255,0.5);
-  border: 4px solid rgb(66,111,197);
-  color: rgb(66,111,197);
-  font-size: 24px;
+#directories > button {
+  background-color: #d9a902;
+  border: 0px solid transparent;
+  color: black;
+  font-size: 18px;
   font-weight: 800;
   padding: 8px 14px 8px 14px;
 }
 
-#stop {
-  color: rgb(197, 81, 66);
-  border-color: rgb(197, 81, 66);
+#directories > span {
+  background-color: #212021;
+  color: white;
+  border: 0px solid transparent;
 }
 
-#test {
-  color: rgb(197, 136, 66);
-  border-color: rgb(197, 136, 66);
+#output h2 {
+  margin: 0px;
+  padding: 0px;
+  font-size: 18px;
+  background-color: #d9a902;
 }
 
-#run {
-  color: rgb(70, 197, 66);
-  border-color: rgb(70, 197, 66);
+#output p {
+  height: 4em;
+  background-color: #212021;
+  color: white;
+  margin: 0px;
+}
+
+#options {
+  margin: 0px;
+  padding: 0px;
+  background-color: #212021;
+  color: white;
+}
+
+#options .box {
+  margin: 0px;
+  height: 8em;
+  width: 8em;
+  background-color: #d9a902;
+}
+
+#actions > button {
+  border: 0px solid transparent;
+  font-size: 28px;
+  font-weight: 800;
+}
+
+#actions > #stop {
+  color: black;
+  background-color: #f45d01;
+}
+
+#actions > #test {
+  color: black;
+  background-color: #f2cc47;
+}
+
+#actions > #run {
+  color: black;
+  background-color: #97cc04;
 }
