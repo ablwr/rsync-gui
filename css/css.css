@@ -118,18 +118,22 @@ h2 {
   background-color: #575657
 }
 
-#actions > button {
+#running {
+  color: white;
+}
+
+#actions > button, #ready > button {
   border: 0px solid transparent;
   font-size: 28px;
   font-weight: 800;
 }
 
-#actions > #stop {
+#stop {
   color: black;
   background-color: #f45d01;
 }
 
-#actions > #test {
+#ready {
   color: black;
   background-color: #f2cc47;
 }

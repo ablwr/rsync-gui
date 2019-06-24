@@ -1,19 +1,50 @@
-const { dialog } = require('electron').remote
-const { exec } = require('child_process');
+const { dialog, clipboard } = require('electron').remote
+const { spawn } = require('child_process')
 
-function execute(command, callback) {
-  exec(command, (error, stdout, stderr) => {
-    callback(stdout);
+// Action buttons
+
+function executeScript(command, callback) {
+  const script = spawn("rsync", command)
+
+  script.stdout.on('data', (data) => {
+    document.getElementById("running").innerText = data
+    console.log(`stdout: ${data}`);
+  });
+
+  script.stderr.on('data', (data) => {
+    document.getElementById("running").innerText = data
+    console.log(`stderr: ${data}`);
+  });
+
+  script.on('close', (code) => {
+    console.log(`child process exited with code ${code}`);
   });
 };
+z
+document.getElementById("ready").addEventListener("click", (e) => {
+  script = document.getElementById('showScript').innerText + ", --dry-run"
+  console.log("Performing test run of " + script)
+  script = script.replace("rsync ", "").split(" ")
+  console.log(script)
+  executeScript(script, (output) => {
+    console.log(output);
+    document.getElementById("running").innerText = output
+  });
+})
 
 document.getElementById("run").addEventListener("click", (e) => {
-  // dryrun until I feel good about the stop button working
   script = document.getElementById('showScript').innerText
-  console.log(script)
-  execute(script, (output) => {
+  console.log("Running " + script)
+  script = script.replace("rsync ", "").split(" ")
+  executeScript(script, (output) => {
     console.log(output);
+    document.getElementById("running").innerText = output
   });
+})
+
+document.getElementById("stop").addEventListener("click", (e)=> {
+  console.log("Killing...")
+  // kill(runTest)
 })
 
 
@@ -74,4 +105,11 @@ selectDestBtn.addEventListener("click", (event) => {
   document.getElementById('selected-dest').innerHTML = `Selected path: ${selectedDest}`
   scriptParts.dest = selectedDest
   scriptBuilder(scriptParts)
+})
+
+// Clipboard
+
+document.getElementById("copyScript").addEventListener("click", (e) => {
+  showScript = document.getElementById("showScript").innerText
+  clipboard.writeText(showScript)
 })
