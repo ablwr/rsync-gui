@@ -9,6 +9,8 @@ function executeScript(command, callback) {
   script.stdout.on('data', (data) => {
     document.getElementById("running").innerText = data
     console.log(`stdout: ${data}`);
+    document.getElementById("running").append("Is this what you expected?")
+    document.getElementById("actions").classList.remove("hidden")
   });
 
   script.stderr.on('data', (data) => {
@@ -27,8 +29,8 @@ document.getElementById("ready").addEventListener("click", (e) => {
   script = script.replace("rsync ", "").split(" ")
   console.log(script)
   executeScript(script, (output) => {
-    console.log(output);
-    document.getElementById("running").innerText = output
+    
+    document.getElementById("actions").remove("hidden")
   });
 })
 

@@ -53,6 +53,10 @@ body {
 
 /* Styling  */
 
+.hidden {
+  visibility: hidden;
+}
+
 #title > h1 {
   font-size: 2.75em;
   font-weight: 800;
