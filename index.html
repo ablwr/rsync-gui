@@ -10,15 +10,19 @@
       <h1>🔄 rsync-gui 🔄</h1>
     </header>
     <section id="directories">
-      <button id="source-directory">Add source</button>
+      <button id="source-directory" class="btn arrow-right">Add source</button>
       <span id="selected-source"></span>
-      <button id="destination-directory">Add destination</button>
+      <button id="destination-directory" class="btn arrow-right">Add destination</button>
       <span id="selected-dest"></span>      
     </section>
-    <!-- <section id="remote"> -->
+    <section id="remote">
       <!-- TODO -->
-      <!-- <button id="remoteOption">Remote?</button> -->
-    <!-- </section> -->
+      <!-- <button id="remoteOption">Remote destination?</button>
+      <div id="remoteFields" class="hidden">
+        <input id="remoteName" type="text" placeholder="User"> @ <input
+        id="remoteHost type="text" placeholder="Location">
+      </div> -->
+      </section>
     <section id="options">
       <button value="" name="a" id="a">Archive mode. Preserve file metadata.</button>
       <button value="" name="v" id="v">Be verbose</button>
@@ -37,14 +41,16 @@
     </section>
     <section id="output">
       <p id="showScript">rsync</p>
-      <button id="copyScript">Copy script</button>
+      <button id="copyScript" class="btn arrow-left">Copy script</button>
     </section>
     <section id="ready">
-      <button id="ready">Ready</button>
+      <button id="ready" class="btn">Ready</button>
     </section>
     <section id="running">
       <!--  -->
+      
     </section>
+    <h2 id="resultsPrompt"></h2>
     <section id="actions" class="hidden">
       <button id="stop">Stop</button>
       <button id="run">Run</button>

@@ -1,5 +1,5 @@
 body {
-  background-color: #2d7dd2;
+  background-color: #336faf;
   color: black;
   font-family: 'Lato', sans-serif;
   padding: 0px;
@@ -14,10 +14,6 @@ body {
   grid-template-columns: 1fr;
   grid-template-rows:repeat(5, 0.25fr) 0.1;
   grid-gap: 12px;
-}
-
-#layout * {
-  font-size: 18px;
 }
 
 #title, #directories, #output, #actions, #footer {
@@ -51,7 +47,7 @@ body {
   height: 6em;
 }
 
-/* Styling  */
+/* Styling, general  */
 
 .hidden {
   visibility: hidden;
@@ -68,19 +64,12 @@ body {
 }
 
 h2 {
-  font-size: 3vh;
+  font-size: 3em;
 }
 
-#directories > button {
-  background-color: #d9a902;
-  border: 0px solid transparent;
-  color: black;
-  font-weight: 800;
-  padding: 1em 2em 1em 2em;
-}
-
-#directories > button:hover {
-  background-color: #ae8702
+#resultsPrompt {
+  color: #ae8702;
+  font-size: 3em;
 }
 
 #directories > span {
@@ -90,16 +79,8 @@ h2 {
   padding: 1em;
 }
 
-#output button {
-  background-color: #d9a902;
-  border: 0px solid transparent;
-  color: black;
-  font-weight: 800;
-  padding: 1em 2em 1em 2em;
-}
-
 #output p {
-  height: 8em;
+  height: 4em;
   background-color: #212021;
   color: white;
   margin: 0px;
@@ -109,7 +90,7 @@ h2 {
 #options button {
   width: auto;
   height: auto;
-  background-color: #d9a902;
+  background-color: #ffb74d;
   border: 0px solid transparent;
   overflow: visible;
   text-align: center;
@@ -119,7 +100,7 @@ h2 {
 }
 
 #options > button:hover {
-  background-color: #575657
+  background: #ff9800;
 }
 
 #running {
@@ -139,7 +120,11 @@ h2 {
 
 #ready {
   color: black;
-  background-color: #f2cc47;
+  background-color: #ffb74d;
+}
+
+#ready:hover, #copyScript:hover {
+  background-color: #ff9800;
 }
 
 #run {
@@ -151,3 +136,93 @@ h2 {
   text-align: center;
   color: white;
 }
+
+
+
+/* Button arrow styles */
+
+.btn:hover {
+  background: #ff9800;
+}
+
+.btn:active {
+  background: #ff8c37;
+}
+
+.btn.active:hover {
+  background: #ff9800;
+}
+
+.btn {
+  cursor: pointer;
+  border: none;
+  height: 36px;
+  display: inline-block;
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 7px;
+  vertical-align: middle;
+  background: #ffb74d;
+  font-weight: 800;
+  line-height: 12px;
+  width: 155px;
+}
+
+.arrow-right {
+  position: relative;
+  padding-left: 17.5px;
+  padding-right: 17.5px;
+}
+
+.arrow-right:after {
+  content: "";
+  position: absolute;
+  top: 5px;
+  width: 26px;
+  height: 26px;
+  background: inherit;
+  border: inherit;
+  border-left-color: transparent;
+  border-bottom-color: transparent;
+}
+
+.arrow-right:after {
+  transform: rotate(45deg);
+}
+
+.arrow-right:after {
+  right: -13px;
+}
+.arrow-right:after {
+  z-index: 1;
+}
+
+.arrow-left {
+  position: relative;
+  padding-left: 17.5px;
+  padding-right: 17.5px;
+}
+
+.arrow-left:before {
+  content: "";
+  position: absolute;
+  top: 5px;
+  width: 26px;
+  height: 26px;
+  background: inherit;
+  border: inherit;
+  border-left-color: transparent;
+  border-bottom-color: transparent;
+}
+
+.arrow-left:before {
+  transform: rotate(45deg);
+}
+
+.arrow-left:before {
+  left: -13px;
+}
+.arrow-left:before {
+  z-index: 1;
+}
+

@@ -5,17 +5,16 @@ const { spawn } = require('child_process')
 
 function executeScript(command, callback) {
   const script = spawn("rsync", command)
-
   script.stdout.on('data', (data) => {
     document.getElementById("running").innerText = data
-    console.log(`stdout: ${data}`);
-    document.getElementById("running").append("Is this what you expected?")
+    document.getElementById("resultsPrompt").append("Great! Is this what you expected?")
     document.getElementById("actions").classList.remove("hidden")
   });
 
   script.stderr.on('data', (data) => {
     document.getElementById("running").innerText = data
     console.log(`stderr: ${data}`);
+    document.getElementById("resultsPrompt").append("There was an error with this command.")
   });
 
   script.on('close', (code) => {
@@ -25,12 +24,9 @@ function executeScript(command, callback) {
 z
 document.getElementById("ready").addEventListener("click", (e) => {
   script = document.getElementById('showScript').innerText + ", --dry-run"
-  console.log("Performing test run of " + script)
   script = script.replace("rsync ", "").split(" ")
-  console.log(script)
   executeScript(script, (output) => {
-    
-    document.getElementById("actions").remove("hidden")
+    //
   });
 })
 
@@ -39,14 +35,22 @@ document.getElementById("run").addEventListener("click", (e) => {
   console.log("Running " + script)
   script = script.replace("rsync ", "").split(" ")
   executeScript(script, (output) => {
-    console.log(output);
-    document.getElementById("running").innerText = output
+
   });
 })
+
+// Kill process while running
 
 document.getElementById("stop").addEventListener("click", (e)=> {
   console.log("Killing...")
   // kill(runTest)
+})
+
+// Remote addition
+
+document.getElementById("remote").addEventListener("click", (e) => {
+  document.getElementById("remoteFields").classList.remove("hidden")
+  scriptBuilder()
 })
 
 

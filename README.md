@@ -3,16 +3,15 @@
 For people who want the power of rsync but are not familiar with the command
 line or need a user-friendly way to understand the potential uses.
 
-TODO: 
+## TODO: 
 - README
 - come up with a cute name
-- Move stop/test/go to ready --dry-run and then run
 - add server/remote functionality
-- add tooltips
+- improve design
 - add more options
 - think about giving options vs clutter
 - clean up html/selectors to better semantic practice
-- improve design
+- add tooltips (maybe not necessary?)
 
 ## Testing
 
