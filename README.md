@@ -1,17 +1,24 @@
 # rsync-gui
 
-For people who want the power of rsync but are not familiar with the command
-line or need a user-friendly way to understand the potential uses.
+⚠ Under Construction ⚠
+Thank you ⚠ for your ⚠ patience
+⚠ Work in Progress ⚠
+
+For people who want the power of [`rsync`](https://linux.die.net/man/1/rsync)
+but are not familiar with the command line or need a user-friendly way to
+understand the potential options and uses.
 
 ## TODO: 
-- README
+
+- Improve README
 - come up with a cute name
 - add server/remote functionality
 - improve design
 - add more options
 - think about giving options vs clutter
 - clean up html/selectors to better semantic practice
-- add tooltips (maybe not necessary?)
+- clean package.json
+- prepare and test packaging across OSes
 
 ## Testing
 
