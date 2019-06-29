@@ -31,8 +31,8 @@ body {
 
 #options {
   display: inline-grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 8px;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 4px;
 }
 
 #output {
@@ -44,7 +44,12 @@ body {
 #actions {
   display: inline-grid;
   grid-template-columns: 1fr 1fr 1fr;
-  height: 6em;
+  height: 3em;
+}
+
+#test {
+  display: inline-grid;
+  justify-items: center;
 }
 
 /* Styling, general  */
@@ -54,7 +59,7 @@ body {
 }
 
 #title > h1 {
-  font-size: 2.75em;
+  font-size: 3em;
   font-weight: 800;
   color: white;
   text-transform: uppercase;
@@ -63,13 +68,10 @@ body {
   margin-bottom: 0px;
 }
 
-h2 {
-  font-size: 3em;
-}
-
 #resultsPrompt {
-  color: #ae8702;
-  font-size: 3em;
+  color: white;
+  font-weight: 800;
+  font-size: 2em;
 }
 
 #directories > span {
@@ -80,7 +82,7 @@ h2 {
 }
 
 #output p {
-  height: 4em;
+  min-height: 2em;
   background-color: #212021;
   color: white;
   margin: 0px;
@@ -90,27 +92,25 @@ h2 {
 #options button {
   width: auto;
   height: auto;
-  background-color: #ffb74d;
   border: 0px solid transparent;
   overflow: visible;
   text-align: center;
-  font-size: 16px;
-  font-weight: 800;
-  padding: 10px;
+  padding: 4px;
 }
 
 #options > button:hover {
-  background: #ff9800;
+  background: #e7e966;
 }
 
 #running {
   color: white;
 }
 
-#actions > button, #ready > button {
+#actions > button, #testButton {
   border: 0px solid transparent;
   font-size: 28px;
   font-weight: 800;
+  min-height: 2em;
 }
 
 #stop {
@@ -118,12 +118,12 @@ h2 {
   background-color: #f45d01;
 }
 
-#ready {
+#testButton {
   color: black;
   background-color: #ffb74d;
 }
 
-#ready:hover, #copyScript:hover {
+#testButton:hover, #copyScript:hover {
   background-color: #ff9800;
 }
 

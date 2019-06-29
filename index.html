@@ -24,7 +24,7 @@
       </div> -->
       </section>
     <section id="options">
-      <button value="" name="a" id="a">Archive mode. Preserve file metadata.</button>
+      <button value="" name="a" id="a">Archive mode (preserve file metadata)</button>
       <button value="" name="v" id="v">Be verbose</button>
       <button value="" name="i" id="i">Create change log report</button>
       <button value="" name="u" id="u">Do not sync/copy modified files at destination</button>
@@ -43,15 +43,18 @@
       <p id="showScript">rsync</p>
       <button id="copyScript" class="btn arrow-left">Copy script</button>
     </section>
-    <section id="ready">
-      <button id="ready" class="btn">Ready</button>
+    <section id="test">
+      <button id="testButton" class="btn">Test</button>
     </section>
     <section id="running">
       <!--  -->
       
     </section>
-    <h2 id="resultsPrompt"></h2>
+    <section>
+      <p id="resultsPrompt"></p>
+    </section>
     <section id="actions" class="hidden">
+      <button id="restart">Start over</button>
       <button id="stop">Stop</button>
       <button id="run">Run</button>
     </section>

@@ -5,6 +5,7 @@ const { spawn } = require('child_process')
 
 function executeScript(command, callback) {
   const script = spawn("rsync", command)
+  document.getElementById("resultsPrompt").innerText = ""
   script.stdout.on('data', (data) => {
     document.getElementById("running").innerText = data
     document.getElementById("resultsPrompt").append("Great! Is this what you expected?")
@@ -13,7 +14,7 @@ function executeScript(command, callback) {
 
   script.stderr.on('data', (data) => {
     document.getElementById("running").innerText = data
-    console.log(`stderr: ${data}`);
+    document.getElementById("resultsPrompt").innerText = ""
     document.getElementById("resultsPrompt").append("There was an error with this command.")
   });
 
@@ -22,7 +23,7 @@ function executeScript(command, callback) {
   });
 };
 z
-document.getElementById("ready").addEventListener("click", (e) => {
+document.getElementById("test").addEventListener("click", (e) => {
   script = document.getElementById('showScript').innerText + ", --dry-run"
   script = script.replace("rsync ", "").split(" ")
   executeScript(script, (output) => {
@@ -34,20 +35,20 @@ document.getElementById("run").addEventListener("click", (e) => {
   script = document.getElementById('showScript').innerText
   console.log("Running " + script)
   script = script.replace("rsync ", "").split(" ")
-  executeScript(script, (output) => {
+  executeScript(script, (output) => { });
+})
 
-  });
+document.getElementById("restart").addEventListener("click", (e) => {
+  location.reload()
 })
 
 // Kill process while running
-
 document.getElementById("stop").addEventListener("click", (e)=> {
   console.log("Killing...")
   // kill(runTest)
 })
 
 // Remote addition
-
 document.getElementById("remote").addEventListener("click", (e) => {
   document.getElementById("remoteFields").classList.remove("hidden")
   scriptBuilder()
@@ -81,7 +82,7 @@ buttons.forEach(function (b, i){
     } else if (b.value = "checked") {
       scriptParts.flags = scriptParts.flags.replace(b.id,'')
       b.value = ""
-      b.style = "background-color: #d9a902;"
+      b.style = ""
     }
     if (scriptParts.flags == "-") { scriptParts.flags = "" }
     scriptBuilder(scriptParts)
