@@ -3,37 +3,60 @@ const { spawn } = require('child_process')
 
 // Action buttons
 
-function executeScript(command, callback) {
-  const script = spawn("rsync", command)
+function executeTestScript(command, callback) {
+  const runningScript = spawn("rsync", command)
   document.getElementById("resultsPrompt").innerText = ""
-  script.stdout.on('data', (data) => {
+  runningScript.stdout.on('data', (data) => {
     document.getElementById("running").innerText = data
+    document.getElementById("resultsPrompt").innerText = ""
     document.getElementById("resultsPrompt").append("Great! Is this what you expected?")
     document.getElementById("actions").classList.remove("hidden")
   });
 
-  script.stderr.on('data', (data) => {
+  runningScript.stderr.on('data', (data) => {
     document.getElementById("running").innerText = data
     document.getElementById("resultsPrompt").innerText = ""
     document.getElementById("resultsPrompt").append("There was an error with this command.")
   });
 
-  script.on('close', (code) => {
+  runningScript.on('close', (code) => {
     console.log(`child process exited with code ${code}`);
   });
-};
-z
+}
+
 document.getElementById("test").addEventListener("click", (e) => {
-  script = document.getElementById('showScript').innerText + ", --dry-run"
-  script = script.replace("rsync ", "").split(" ")
-  executeScript(script, (output) => {
+  scriptText = document.getElementById('showScript').innerText + ", --dry-run"
+  scriptText = scriptText.replace("rsync ", "").split(" ")
+  executeTestScript(scriptText, (output) => {
     //
   });
 })
 
+
+function executeScript(command, callback) {
+  const runningScript = spawn("rsync", command)
+  document.getElementById("resultsPrompt").innerText = ""
+  runningScript.stdout.on('data', (data) => {
+    document.getElementById("running").innerText = data
+    document.getElementById("resultsPrompt").innerText = ""
+    document.getElementById("resultsPrompt").append("Script has finished.")
+    document.getElementById("actions").classList.remove("hidden")
+  });
+
+  runningScript.stderr.on('data', (data) => {
+    document.getElementById("running").innerText = data
+    document.getElementById("resultsPrompt").innerText = ""
+    document.getElementById("resultsPrompt").append("There was an error with this process.")
+  });
+
+  runningScript.on('close', (code) => {
+    console.log(`child process exited with code ${code}`);
+  });
+}
+
+
 document.getElementById("run").addEventListener("click", (e) => {
   script = document.getElementById('showScript').innerText
-  console.log("Running " + script)
   script = script.replace("rsync ", "").split(" ")
   executeScript(script, (output) => { });
 })
@@ -45,7 +68,8 @@ document.getElementById("restart").addEventListener("click", (e) => {
 // Kill process while running
 document.getElementById("stop").addEventListener("click", (e)=> {
   console.log("Killing...")
-  // kill(runTest)
+  child.stdin.pause();
+  child.kill();
 })
 
 // Remote addition

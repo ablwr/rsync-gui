@@ -1,20 +1,18 @@
 {
-  "name": "electron-quick-start",
-  "version": "1.0.0",
-  "description": "A minimal Electron application",
+  "name": "rsync-gui",
+  "version": "0.0.1",
+  "description": "A small GUI for rsync",
   "main": "main.js",
   "scripts": {
     "start": "electron ."
   },
-  "repository": "https://github.com/electron/electron-quick-start",
+  "repository": "https://github.com/ablwr/rsync-gui",
   "keywords": [
-    "Electron",
-    "quick",
-    "start",
-    "tutorial",
-    "demo"
+    "electron",
+    "rsync",
+    "gui"
   ],
-  "author": "GitHub",
+  "author": "ablwr",
   "license": "CC0-1.0",
   "devDependencies": {
     "electron": "^5.0.4"

@@ -13,11 +13,9 @@ understand the potential options and uses.
 - Improve README
 - come up with a cute name
 - add server/remote functionality
+- test "stop" button
 - improve design
-- add more options
-- think about giving options vs clutter
-- clean up html/selectors to better semantic practice
-- clean package.json
+- think about giving options more vs clutter
 - prepare and test packaging across OSes
 
 ## Testing

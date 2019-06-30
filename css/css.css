@@ -31,7 +31,7 @@ body {
 
 #options {
   display: inline-grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-gap: 4px;
 }
 
@@ -95,7 +95,7 @@ body {
   border: 0px solid transparent;
   overflow: visible;
   text-align: center;
-  padding: 4px;
+  padding: 8px;
 }
 
 #options > button:hover {
@@ -130,6 +130,10 @@ body {
 #run {
   color: black;
   background-color: #a0d01a;
+}
+
+#actions > button:hover {
+  background: #e7e966;
 }
 
 #footer {
