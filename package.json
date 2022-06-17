@@ -15,6 +15,6 @@
   "author": "ablwr",
   "license": "CC0-1.0",
   "devDependencies": {
-    "electron": "^5.0.4"
+    "electron": "^15.5.5"
   }
 }
